@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { login } from "../redux/apiCalls";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
 
     const handleClick = (e) => {
         e.preventDefault();
-        const dispatch = useDispatch();
+        login(dispatch, { username: username, password: password })
     }
 
     return (
