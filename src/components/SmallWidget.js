@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import { userRequest } from "../requestMethods";
 
 
 const SmallWidget = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const res = await userRequest("users/?new=true");
+        setUsers(res.data);
+      } catch (err) { }
+    };
+    getUsers();
+  }, []);
+
   return (
     <Container>
       <WidgetTitle>New Join Members</WidgetTitle>
