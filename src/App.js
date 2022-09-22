@@ -6,7 +6,6 @@ import SinglePage from './pages/SinglePage';
 import NewPage from './pages/NewPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { userInputs, productInputs } from "./formSource";
-import { useSelector } from 'react-redux';
 
 function App() {
   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { userColumns, userRows } from "../datatablesource";
 import { Link } from "react-router-dom";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 
 const DataTable = () => {
     const actionColumn = [
