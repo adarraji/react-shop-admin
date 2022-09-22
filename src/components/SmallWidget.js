@@ -21,61 +21,21 @@ const SmallWidget = () => {
     <Container>
       <WidgetTitle>New Join Members</WidgetTitle>
       <List>
-        <Item>
-          <Image atl="" src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" />
-          <User>
-            <Username>Anna Keller</Username>
-            <UserTitle>Software Engineer</UserTitle>
-          </User>
-          <Button>
-            <VisibilityIcon style={{ fontSize: "16px", marginRight: "5px" }} />
-            Display
-          </Button>
-        </Item>
-        <Item>
-          <Image atl="" src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" />
-          <User>
-            <Username>Anna Keller</Username>
-            <UserTitle>Software Engineer</UserTitle>
-          </User>
-          <Button>
-            <VisibilityIcon style={{ fontSize: "16px", marginRight: "5px" }} />
-            Display
-          </Button>
-        </Item>
-        <Item>
-          <Image atl="" src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" />
-          <User>
-            <Username>Anna Keller</Username>
-            <UserTitle>Software Engineer</UserTitle>
-          </User>
-          <Button>
-            <VisibilityIcon style={{ fontSize: "16px", marginRight: "5px" }} />
-            Display
-          </Button>
-        </Item>
-        <Item>
-          <Image atl="" src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" />
-          <User>
-            <Username>Anna Keller</Username>
-            <UserTitle>Software Engineer</UserTitle>
-          </User>
-          <Button>
-            <VisibilityIcon style={{ fontSize: "16px", marginRight: "5px" }} />
-            Display
-          </Button>
-        </Item>
-        <Item>
-          <Image atl="" src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" />
-          <User>
-            <Username>Anna Keller</Username>
-            <UserTitle>Software Engineer</UserTitle>
-          </User>
-          <Button>
-            <VisibilityIcon style={{ fontSize: "16px", marginRight: "5px" }} />
-            Display
-          </Button>
-        </Item>
+        {
+          users.map(user => (
+            <Item key={user._id}>
+              <Image atl="" src={user.img || "https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif"} />
+              <User>
+                <Username>{user.user}</Username>
+                <UserTitle>Software Engineer</UserTitle>
+              </User>
+              <Button>
+                <VisibilityIcon style={{ fontSize: "16px", marginRight: "5px" }} />
+                Display
+              </Button>
+            </Item>
+          ))
+        }
       </List>
     </Container>
   )
