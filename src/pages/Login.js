@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 const Login = () => {
@@ -7,6 +8,7 @@ const Login = () => {
 
     const handleClick = (e) => {
         e.preventDefault();
+        const dispatch = useDispatch();
     }
 
     return (
