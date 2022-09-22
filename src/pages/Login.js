@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleClick = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <Container>
-            <Input type="text" placeholder="username"></Input>
-            <Input type="password" placeholder="password"></Input>
-            <Button>Login</Button>
+            <Input onChange={e => setUsername(e.target.value)} type="text" placeholder="username"></Input>
+            <Input onChange={e => setPassword(e.target.value)} type="password" placeholder="password"></Input>
+            <Button onClick={handleClick}>Login</Button>
         </Container>
     )
 }
