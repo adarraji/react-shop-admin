@@ -65,6 +65,7 @@ const List = () => {
 
     return (
         <Container>
+            <ListTitle>Latest Transactions</ListTitle>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -107,7 +108,18 @@ const List = () => {
 }
 
 const Container = styled.div`
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 20px;
+    flex:2;
 `;
+
+const ListTitle = styled.div`
+    font-weight: 500;
+    color: gray;
+    margin-bottom: 15px;
+`;
+
 
 const CellWrapper = styled.div`
     display: flex;

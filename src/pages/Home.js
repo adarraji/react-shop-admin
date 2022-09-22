@@ -6,6 +6,7 @@ import Widget from "../components/Widget";
 import Featured from "../components/Featured";
 import Chart from "../components/Chart";
 import Table from "../components/Table";
+import SmallWidget from "../components/SmallWidget";
 
 
 const home = () => {
@@ -25,7 +26,7 @@ const home = () => {
                     <Chart aspect={2 / 1} title="Last 6 Months (Revenue)" />
                 </Charts>
                 <ListContainer>
-                    <ListTitle>Latest Transactions</ListTitle>
+                    <SmallWidget />
                     <Table />
                 </ListContainer>
             </HomeContainer>
@@ -53,17 +54,10 @@ const Charts = styled.div`
     gap: 20px;
 `;
 
-const ListContainer = styled.div`
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 20px;
+const ListContainer = styled.div`    
     margin: 20px;
+    display: flex;
 `;
 
-const ListTitle = styled.div`
-    font-weight: 500;
-    color: gray;
-    margin-bottom: 15px;
-`;
 
 export default home
