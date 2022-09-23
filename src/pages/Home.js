@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Widget from "../components/Widget";
-import Featured from "../components/Featured";
 import Chart from "../components/Chart";
 import Table from "../components/Table";
 import SmallWidget from "../components/SmallWidget";
@@ -35,12 +34,12 @@ const Home = () => {
         const getStats = async () => {
             try {
                 const res = await userRequest("/users/stats");
-                res.data.map(item => {
+                res.data.map((item) =>
                     setUserStats((prev) => [
                         ...prev,
                         { name: MONTHS[item._id - 1], "Active User": item.total }
                     ])
-                });
+                );
             } catch (err) { console.log(err) }
         }
         getStats();

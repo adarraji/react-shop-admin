@@ -2,12 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 
-const Widget = ({ title, money }) => {
+const Widget = () => {
     return (
         <Container>
             <Item>
@@ -99,12 +95,5 @@ font-size: 15px;
     color: gray;
     /* border-bottom: 1px solid gray; */
 `;
-
-const Icon = styled.div`
-    padding: 5px;
-    border-radius: 5px;
-    align-self: flex-end;
-`;
-
 
 export default Widget

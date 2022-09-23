@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart } from 'recharts';
+import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const Chart = ({ aspect, title, data, areaDataKey }) => {
   return (
