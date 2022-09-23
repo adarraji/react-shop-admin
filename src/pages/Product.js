@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Chart from "../components/Chart";
 import PublishIcon from '@mui/icons-material/Publish';
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Product = () => {
 
@@ -25,6 +26,13 @@ const Product = () => {
 
     const location = useLocation();
     const productId = location.pathname.split("/")[2];
+
+    const product = useSelector(state =>
+        state.product.products.find(item => item._id === productId)
+    )
+
+    console.log(product)
+
     return (
         <Container>
             <Sidebar />
@@ -41,25 +49,21 @@ const Product = () => {
                         </ProductTopLeft>
                         <ProductTopRight>
                             <ProductInfoTop>
-                                <ProductInfoImage alt="" src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
-                                <ProductName>Apple Airpods</ProductName>
+                                <ProductInfoImage alt="" src={product.img} />
+                                <ProductName>{product.title}</ProductName>
                             </ProductInfoTop>
                             <ProductInfoButtom>
                                 <ProductInfoItem>
                                     <ProductInfoKey>id:</ProductInfoKey>
-                                    <ProductInfoValue>123</ProductInfoValue>
+                                    <ProductInfoValue>{product._id}</ProductInfoValue>
                                 </ProductInfoItem>
                                 <ProductInfoItem>
                                     <ProductInfoKey>sales:</ProductInfoKey>
                                     <ProductInfoValue>5123</ProductInfoValue>
                                 </ProductInfoItem>
                                 <ProductInfoItem>
-                                    <ProductInfoKey>active:</ProductInfoKey>
-                                    <ProductInfoValue>yes</ProductInfoValue>
-                                </ProductInfoItem>
-                                <ProductInfoItem>
                                     <ProductInfoKey>in stock:</ProductInfoKey>
-                                    <ProductInfoValue>no</ProductInfoValue>
+                                    <ProductInfoValue>{product.inStock ? "Yes" : "No"}</ProductInfoValue>
                                 </ProductInfoItem>
                             </ProductInfoButtom>
                         </ProductTopRight>
@@ -68,7 +72,11 @@ const Product = () => {
                         <ProductForm>
                             <ProductFormLeft>
                                 <Label>Product Name</Label>
-                                <Input type="text" placeholder="Apple AirPod" />
+                                <Input type="text" placeholder={product.title} />
+                                <Label>Product Description</Label>
+                                <Input type="text" placeholder={product.desc} />
+                                <Label>Price</Label>
+                                <Input type="text" placeholder={product.price} />
                                 <Label>In Stock</Label>
                                 <Select name="inStock" id="idStock">
                                     <Option value="yes">Yes</Option>
@@ -76,13 +84,13 @@ const Product = () => {
                                 </Select>
                                 <Label>Active</Label>
                                 <Select name="active" id="active">
-                                    <Option value="yes">Yes</Option>
-                                    <Option value="no">No</Option>
+                                    <Option value="true">Yes</Option>
+                                    <Option value="false">No</Option>
                                 </Select>
                             </ProductFormLeft>
                             <ProductFormRight>
                                 <ProductUpload>
-                                    <ProductUploadImage alt="" src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
+                                    <ProductUploadImage alt="" src={product.img} />
                                     <Label htmlFor="file">
                                         <PublishIcon />
                                     </Label>
