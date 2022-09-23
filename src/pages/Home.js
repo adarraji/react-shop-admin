@@ -52,9 +52,7 @@ const Home = () => {
             <HomeContainer>
                 <Navbar />
                 <Widgets>
-                    <Widget title="Revanue" money="2452" />
-                    <Widget title="Sales" money="5648" />
-                    <Widget title="Cost" money="1325" />
+                    <Widget />
                 </Widgets>
                 <Charts>
                     <Chart aspect={4 / 1} title="User Analytics" data={userStats} areaDataKey="Active User" />

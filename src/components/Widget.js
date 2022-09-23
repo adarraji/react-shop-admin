@@ -1,82 +1,103 @@
 import React from "react";
 import styled from "styled-components";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 
-
-
 const Widget = ({ title, money }) => {
     return (
         <Container>
-            <Left>
-                <Title>{title}</Title>
-                <Counter>$ {money}</Counter>
-                <Link></Link>
-            </Left>
-            <Right>
-                <Percentage color="green">
-                    <KeyboardArrowUpIcon />
-                    20 %
-                </Percentage>
-                <Icon>
-                    <ShoppingCartOutlinedIcon />
-                </Icon>
-            </Right>
+            <Item>
+                <Title>Revanue</Title>
+                <MoneyContainer>
+                    <Money>
+                        % 2145
+                    </Money>
+                    <Rate color="red">
+                        <KeyboardArrowDownIcon />
+                        -11.4
+                    </Rate>
+                </MoneyContainer>
+                <Sub>Compared to last month</Sub>
+            </Item>
+            <Item>
+                <Title>Sales</Title>
+                <MoneyContainer>
+                    <Money>
+                        % 2145
+                    </Money>
+                    <Rate >
+                        <KeyboardArrowDownIcon />
+                        -11.4
+                    </Rate>
+                </MoneyContainer>
+                <Sub>Compared to last month</Sub>
+            </Item>
+            <Item>
+                <Title>Cost</Title>
+                <MoneyContainer>
+                    <Money>
+                        % 2145
+                    </Money>
+                    <Rate color="red">
+                        <KeyboardArrowDownIcon />
+                        -11.4
+                    </Rate>
+                </MoneyContainer>
+                <Sub>Compared to last month</Sub>
+            </Item>
         </Container>
     )
 }
 
 const Container = styled.div`
     display: flex;
-    justify-content: space-between;
-    flex:1;
-    padding: 10px;
+    justify-content: space-between;        
+    width: 100%;
+`;
+
+const Item = styled.div`       
+    flex: 1;
+    margin: 0px 20px;
+    padding: 30px;  
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    border-radius: 10px;
-    height: 100px;
-`;
-
-const Left = styled.div`
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
-`;
-
-const Right = styled.div`
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47); 
+    border-radius: 10px;    
+    cursor: pointer;
+    cursor: pointer;
 `;
 
 const Title = styled.span`
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     color: rgb(160, 160, 160);
 `;
 
 
-const Counter = styled.span`
-    font-size: 28px;
-    font-weight: 300;
-`;
-
-
-const Link = styled.span`
-    width: max-content;
-    font-size: 12px;
-    border-bottom: 1px solid gray;
-`;
-
-
-const Percentage = styled.div`
+const MoneyContainer = styled.div`
+    margin: 10px 0px;
     display: flex;
     align-items: center;
-    font-size: 14px;
-    color: ${(props) => props.color}
+`;
+
+const Money = styled.span`
+    font-size: 30px;
+    font-weight: 600;
+`;
+
+const Rate = styled.span`
+    display: flex;
+    align-items: center;
+    margin-left: 20px;    
+`;
+
+const Sub = styled.span`
+font-size: 15px;
+    color: gray;
+    /* border-bottom: 1px solid gray; */
 `;
 
 const Icon = styled.div`
