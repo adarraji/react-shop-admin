@@ -26,7 +26,7 @@ const SmallWidget = () => {
             <Item key={user._id}>
               <Image atl="" src={user.img || "https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif"} />
               <User>
-                <Username>{user.user}</Username>
+                <Username>{user.username}</Username>
                 <UserTitle>Software Engineer</UserTitle>
               </User>
               <Button>
