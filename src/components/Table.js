@@ -70,20 +70,6 @@ const ListTitle = styled.div`
     margin-bottom: 15px;
 `;
 
-
-const CellWrapper = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-const Image = styled.img`
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin: 10px;
-    object-fit: cover;
-`;
-
 const Status = styled.span`
     padding: 5px;
     border-radius: 5px;
