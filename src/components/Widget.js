@@ -19,8 +19,6 @@ const Widget = () => {
         getIcome();
     }, []);
 
-    console.log(percentage)
-
     return (
         <Container>
             <Item>
