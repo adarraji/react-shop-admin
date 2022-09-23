@@ -43,7 +43,7 @@ const ProductList = () => {
             renderCell: (params) => {
                 return (
                     <CellAction>
-                        <Link to={""} style={{ textDecoration: "none" }}>
+                        <Link to={"/products/" + params.row._id} style={{ textDecoration: "none" }}>
                             <ViewButton>Edit</ViewButton>
                         </Link>
                         <DeleteButton onClick={() => handleDelete(params.row._id)}>Delete</DeleteButton>
