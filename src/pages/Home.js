@@ -46,8 +46,6 @@ const Home = () => {
         getStats();
     }, [MONTHS]);
 
-    console.log(userStats);
-
     return (
         <Container>
             <Sidebar />
