@@ -13,7 +13,7 @@ const Widget = ({ title, money }) => {
         <Container>
             <Left>
                 <Title>{title}</Title>
-                <Counter>{money}</Counter>
+                <Counter>$ {money}</Counter>
                 <Link></Link>
             </Left>
             <Right>
@@ -54,7 +54,7 @@ const Right = styled.div`
 
 const Title = styled.span`
     font-weight: bold;
-    font-size: 14px;
+    font-size: 24px;
     color: rgb(160, 160, 160);
 `;
 
