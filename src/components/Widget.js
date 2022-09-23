@@ -1,20 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { userRequest } from "../requestMethods";
 
 const Widget = () => {
+    const [income, setIncome] = useState([]);
+    const [percentage, setPercentage] = useState(0);
+
+    useEffect(() => {
+        const getIcome = async () => {
+            try {
+                const res = await userRequest("orders/income");
+                setIncome(res.data);
+                setPercentage(((res.data[1].total * 100) / res.data[0].total) - 100)
+            } catch (err) { }
+        };
+        getIcome();
+    }, []);
+
+    console.log(percentage)
+
     return (
         <Container>
             <Item>
                 <Title>Revanue</Title>
                 <MoneyContainer>
-                    <Money>
-                        % 2145
-                    </Money>
+                    <Money>$ {income[1]?.total}</Money>
                     <Rate color="red">
-                        <KeyboardArrowDownIcon />
-                        -11.4
+
+                        % {Math.floor(percentage)}
+                        {
+                            percentage < 0 ? (
+                                <KeyboardArrowDownIcon style={{ color: "red" }} />
+                            ) : (
+                                <KeyboardArrowUpIcon style={{ color: "green" }} />
+                            )
+                        }
+
                     </Rate>
                 </MoneyContainer>
                 <Sub>Compared to last month</Sub>
