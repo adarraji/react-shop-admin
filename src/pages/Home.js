@@ -61,7 +61,7 @@ const Home = () => {
                 </Widgets>
                 <Charts>
                     <Featured />
-                    <Chart aspect={2 / 1} title="Last 6 Months (Revenue)" data={userStats} />
+                    <Chart aspect={2 / 1} title="Last 6 Months (Revenue)" data={userStats} areaDataKey="Active User" />
                 </Charts>
                 <ListContainer>
                     <SmallWidget />
