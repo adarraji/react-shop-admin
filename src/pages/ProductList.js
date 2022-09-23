@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
-import { getProducts } from "../redux/apiCalls";
+import { deleteProduct, getProducts } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
@@ -14,6 +14,10 @@ const ProductList = () => {
     useEffect(() => {
         getProducts(dispatch);
     }, [dispatch]);
+
+    const handleDelete = (id) => {
+        deleteProduct(id, dispatch);
+    }
 
     const columns = [
         { field: "_id", headerName: "ID", width: 220 },
@@ -36,13 +40,13 @@ const ProductList = () => {
             field: "action",
             headerName: "Action",
             width: 200,
-            renderCell: () => {
+            renderCell: (params) => {
                 return (
                     <CellAction>
                         <Link to={""} style={{ textDecoration: "none" }}>
                             <ViewButton>View</ViewButton>
                         </Link>
-                        <DeleteButton>Delete</DeleteButton>
+                        <DeleteButton onClick={() => handleDelete(params.row._id)}>Delete</DeleteButton>
                     </CellAction>
                 )
             }
