@@ -27,8 +27,7 @@ const Widget = () => {
                 <Title>Revanue</Title>
                 <MoneyContainer>
                     <Money>$ {income[1]?.total}</Money>
-                    <Rate color="red">
-
+                    <Rate>
                         % {Math.floor(percentage)}
                         {
                             percentage < 0 ? (
@@ -37,7 +36,6 @@ const Widget = () => {
                                 <KeyboardArrowUpIcon style={{ color: "green" }} />
                             )
                         }
-
                     </Rate>
                 </MoneyContainer>
                 <Sub>Compared to last month</Sub>
@@ -46,11 +44,11 @@ const Widget = () => {
                 <Title>Sales</Title>
                 <MoneyContainer>
                     <Money>
-                        % 2145
+                        $4,415
                     </Money>
                     <Rate >
-                        <KeyboardArrowDownIcon />
-                        -11.4
+                        <KeyboardArrowDownIcon style={{ color: "red" }} />
+                        -1.4
                     </Rate>
                 </MoneyContainer>
                 <Sub>Compared to last month</Sub>
@@ -59,11 +57,11 @@ const Widget = () => {
                 <Title>Cost</Title>
                 <MoneyContainer>
                     <Money>
-                        % 2145
+                        $2,225
                     </Money>
-                    <Rate color="red">
-                        <KeyboardArrowDownIcon />
-                        -11.4
+                    <Rate>
+                        <KeyboardArrowUpIcon style={{ color: "green" }} />
+                        +2.4
                     </Rate>
                 </MoneyContainer>
                 <Sub>Compared to last month</Sub>
