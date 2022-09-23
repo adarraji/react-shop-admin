@@ -4,7 +4,7 @@ import { userColumns, userRows } from "../datatablesource";
 import { Link } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
 
-const DataTable = () => {
+const DataTable = ({ title, columns, rows, newLink, viewLink }) => {
     const actionColumn = [
         {
             field: "action",
@@ -13,7 +13,7 @@ const DataTable = () => {
             renderCell: () => {
                 return (
                     <CellAction>
-                        <Link to="/users/test" style={{ textDecoration: "none" }}>
+                        <Link to={viewLink} style={{ textDecoration: "none" }}>
                             <ViewButton>View</ViewButton>
                         </Link>
                         <DeleteButton>Delete</DeleteButton>
@@ -26,14 +26,14 @@ const DataTable = () => {
     return (
         <Container>
             <Title>
-                Add New Users
-                <Link to="/users/new" style={LinkStyles}>
+                {title}
+                <Link to={newLink} style={LinkStyles}>
                     Add New
                 </Link>
             </Title>
             <DataGrid
-                rows={userRows}
-                columns={userColumns.concat(actionColumn)}
+                rows={rows}
+                columns={columns.concat(actionColumn)}
                 pageSize={5}
                 rowsPerPageOptions={[5]}
                 checkboxSelection

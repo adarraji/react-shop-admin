@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import DataTable from "../components/DataTable";
+import { userColumns, userRows } from "../datatablesource";
 
 const ProductList = () => {
     return (
@@ -10,7 +11,7 @@ const ProductList = () => {
             <Sidebar />
             <ListContainer>
                 <Navbar />
-                <DataTable />
+                <DataTable title="Add New Products" columns={userColumns} rows={userRows} newLink="/users/new" viewLink="/users/test" />
             </ListContainer>
         </Container>
 
