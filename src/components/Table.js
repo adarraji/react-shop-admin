@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { userRequest } from "../requestMethods";
+import { format } from "timeago.js"
 
 
 const List = () => {
@@ -39,7 +40,7 @@ const List = () => {
                         {orders.map((order) => (
                             <TableRow key={order._id}>
                                 <TableCell>{order.userId}</TableCell>
-                                <TableCell >{order.createdAt}</TableCell>
+                                <TableCell >{format(order.createdAt)}</TableCell>
                                 <TableCell >$ {order.amount}</TableCell>
 
                                 <TableCell >
