@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
@@ -7,9 +7,47 @@ import Featured from "../components/Featured";
 import Chart from "../components/Chart";
 import Table from "../components/Table";
 import SmallWidget from "../components/SmallWidget";
+import { userRequest } from "../requestMethods";
 
 
-const home = () => {
+const Home = () => {
+    const [userStats, setUserStats] = useState([]);
+
+    const MONTHS = useMemo(
+        () => [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+        ],
+        []
+    );
+
+    useEffect(() => {
+        const getStats = async () => {
+            try {
+                const res = await userRequest("/users/stats");
+                res.data.map(item => {
+                    setUserStats((prev) => [
+                        ...prev,
+                        { name: MONTHS[item._id - 1], "Active User": item.total }
+                    ])
+                });
+            } catch (err) { console.log(err) }
+        }
+        getStats();
+    }, [MONTHS]);
+
+    console.log(userStats);
+
     return (
         <Container>
             <Sidebar />
@@ -23,7 +61,7 @@ const home = () => {
                 </Widgets>
                 <Charts>
                     <Featured />
-                    <Chart aspect={2 / 1} title="Last 6 Months (Revenue)" />
+                    <Chart aspect={2 / 1} title="Last 6 Months (Revenue)" data={userStats} />
                 </Charts>
                 <ListContainer>
                     <SmallWidget />
@@ -60,4 +98,4 @@ const ListContainer = styled.div`
 `;
 
 
-export default home
+export default Home
