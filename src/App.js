@@ -1,7 +1,8 @@
 import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import List from './pages/List';
+import UserList from './pages/UserList';
+import ProductList from './pages/ProductList';
 import SinglePage from './pages/SinglePage';
 import NewPage from './pages/NewPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -17,12 +18,12 @@ function App() {
           <Route path="/">
             <Route index element={<Home />} />
             <Route path="users">
-              <Route index element={<List />} />
+              <Route index element={<UserList />} />
               <Route path=":userId" element={<SinglePage />} />
               <Route path="new" element={<NewPage inputs={userInputs} title="Add New User" />} />
             </Route>
             <Route path="products">
-              <Route index element={<List />} />
+              <Route index element={<UserList />} />
               <Route path=":productId" element={<SinglePage />} />
               <Route path="new" element={<NewPage inputs={productInputs} title="Add New Product" />} />
             </Route>

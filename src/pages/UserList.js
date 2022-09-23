@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import DataTable from "../components/DataTable";
 
-const List = () => {
+const UserList = () => {
     return (
         <Container>
             <Sidebar />
@@ -26,4 +26,4 @@ const ListContainer = styled.div`
     flex: 6;
 `;
 
-export default List
+export default UserList
