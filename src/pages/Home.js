@@ -58,8 +58,8 @@ const Home = () => {
                     <Widget type="balance" />
                 </Widgets>
                 <Charts>
-                    <Featured />
-                    <Chart aspect={2 / 1} title="User Analytics" data={userStats} areaDataKey="Active User" />
+                    {/* <Featured /> */}
+                    <Chart aspect={4 / 1} title="User Analytics" data={userStats} areaDataKey="Active User" />
                 </Charts>
                 <ListContainer>
                     <SmallWidget />
