@@ -32,7 +32,7 @@ const DataTable = ({ title, columns, rows, newLink, viewLink }) => {
             </Title>
             <DataGrid
                 rows={rows}
-                columns={columns.concat(actionColumn)}
+                columns={columns}
                 pageSize={5}
                 rowsPerPageOptions={[5]}
                 checkboxSelection
