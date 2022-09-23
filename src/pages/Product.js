@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Chart from "../components/Chart";
 import PublishIcon from '@mui/icons-material/Publish';
+import { useLocation } from "react-router-dom";
 
 const Product = () => {
 
@@ -22,7 +23,8 @@ const Product = () => {
         },
     ];
 
-
+    const location = useLocation();
+    const productId = location.pathname.split("/")[2];
     return (
         <Container>
             <Sidebar />
