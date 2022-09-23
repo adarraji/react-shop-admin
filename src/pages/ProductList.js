@@ -44,7 +44,7 @@ const ProductList = () => {
                 return (
                     <CellAction>
                         <Link to={""} style={{ textDecoration: "none" }}>
-                            <ViewButton>View</ViewButton>
+                            <ViewButton>Edit</ViewButton>
                         </Link>
                         <DeleteButton onClick={() => handleDelete(params.row._id)}>Delete</DeleteButton>
                     </CellAction>
