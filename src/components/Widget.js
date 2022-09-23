@@ -8,85 +8,21 @@ import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalance
 
 
 
-const Widget = ({ type }) => {
-
-    let data;
-
-    //temporary
-    const amount = 100;
-    const diff = 20;
-
-    switch (type) {
-        case "user":
-            data = {
-                title: "USERS",
-                isMoney: false,
-                link: "See all users",
-                icon: (
-                    <Icon>
-                        <PersonOutlinedIcon style={{ color: "crimson", backgroundColor: "rgba(255, 0, 0, 0.2)" }} />
-                    </Icon>
-                )
-            };
-            break;
-
-        case "order":
-            data = {
-                title: "ORDERS",
-                isMoney: false,
-                link: "View all orders",
-                icon: (
-                    <Icon>
-                        <ShoppingCartOutlinedIcon style={{ color: "goldenrod", backgroundColor: "rgba(218, 165, 32, 0.2)" }} />
-                    </Icon>
-                )
-            };
-            break;
-
-        case "earning":
-            data = {
-                title: "EARNINGS",
-                isMoney: true,
-                link: "View net earnings",
-                icon: (
-                    <Icon>
-                        <MonetizationOnOutlinedIcon style={{ color: "green", backgroundColor: "rgba(0, 128, 0, 0.2)" }} />
-                    </Icon>
-                )
-            };
-            break;
-
-        case "balance":
-            data = {
-                title: "BALANCE",
-                isMoney: true,
-                link: "See details",
-                icon: (
-                    <Icon>
-                        <AccountBalanceWalletOutlinedIcon style={{ color: "purple", backgroundColor: "rgba(128, 0, 128, 0.2)" }} />
-                    </Icon>
-                )
-            };
-            break;
-
-        default:
-            break;
-    };
-
+const Widget = ({ title, money }) => {
     return (
         <Container>
             <Left>
-                <Title>{data.title}</Title>
-                <Counter>{data.isMoney && "$"} {amount}</Counter>
-                <Link>{data.link}</Link>
+                <Title>{title}</Title>
+                <Counter>{money}</Counter>
+                <Link></Link>
             </Left>
             <Right>
                 <Percentage color="green">
                     <KeyboardArrowUpIcon />
-                    {diff} %
+                    20 %
                 </Percentage>
                 <Icon>
-                    {data.icon}
+                    <ShoppingCartOutlinedIcon />
                 </Icon>
             </Right>
         </Container>

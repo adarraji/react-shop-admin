@@ -52,13 +52,11 @@ const Home = () => {
             <HomeContainer>
                 <Navbar />
                 <Widgets>
-                    <Widget type="user" />
-                    <Widget type="order" />
-                    <Widget type="earning" />
-                    <Widget type="balance" />
+                    <Widget title="Revanue" money="2452" />
+                    <Widget title="Sales" money="5648" />
+                    <Widget title="Cost" money="1325" />
                 </Widgets>
                 <Charts>
-                    {/* <Featured /> */}
                     <Chart aspect={4 / 1} title="User Analytics" data={userStats} areaDataKey="Active User" />
                 </Charts>
                 <ListContainer>
