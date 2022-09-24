@@ -8,6 +8,7 @@ import NewPage from './pages/NewPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { userInputs, productInputs } from "./formSource";
 import Product from './pages/Product';
+import ProductNew from './pages/ProductNew';
 
 function App() {
   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin
@@ -26,7 +27,7 @@ function App() {
             <Route path="products">
               <Route index element={<ProductList />} />
               <Route path=":productId" element={<Product />} />
-              <Route path="new" element={<NewPage inputs={productInputs} title="Add New Product" />} />
+              <Route path="new" element={<ProductNew inputs={productInputs} title="Add New Product" />} />
             </Route>
           </Route>
         )

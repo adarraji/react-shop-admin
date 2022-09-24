@@ -61,7 +61,7 @@ const ProductList = () => {
                 <TableContainer>
                     <Title>
                         {"Add New Products"}
-                        <Link to={""} style={LinkStyles}>
+                        <Link to={"new"} style={LinkStyles}>
                             Add New
                         </Link>
                     </Title>
