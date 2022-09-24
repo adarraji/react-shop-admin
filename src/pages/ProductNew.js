@@ -6,7 +6,7 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 
 
 
-const ProductNew = ({ inputs, title }) => {
+const ProductNew = () => {
     const [file, setFile] = useState("");
     console.log(file);
     return (
@@ -15,7 +15,7 @@ const ProductNew = ({ inputs, title }) => {
             <NewContainer>
                 <Navbar />
                 <Top>
-                    <Title>{title}</Title>
+                    <Title>Add New Product</Title>
                 </Top>
                 <Bottom>
                     <Left>
@@ -29,14 +29,26 @@ const ProductNew = ({ inputs, title }) => {
                                 </Label>
                                 <FileInput type="file" id="file" onChange={e => setFile(e.target.files[0])} />
                             </FormInput>
-                            {
-                                inputs.map(input => (
-                                    <FormInput key={input.id}>
-                                        <Label>{input.label}</Label>
-                                        <Input type={input.type} placeholder={input.placeholder} />
-                                    </FormInput>
-                                ))
-                            }
+                            <FormInput>
+                                <Label>Title</Label>
+                                <Input type="text" placeholder="Apple Macbook Pro" />
+                            </FormInput>
+                            <FormInput>
+                                <Label>Description</Label>
+                                <Input type="text" placeholder="Description" />
+                            </FormInput>
+                            <FormInput>
+                                <Label>Category</Label>
+                                <Input type="text" placeholder="Computers" />
+                            </FormInput>
+                            <FormInput>
+                                <Label>Price</Label>
+                                <Input type="text" placeholder="100" />
+                            </FormInput>
+                            <FormInput>
+                                <Label>Stock</Label>
+                                <Input type="text" placeholder="in stocks" />
+                            </FormInput>
                             <Button>Send</Button>
                         </Form>
                     </Right>
