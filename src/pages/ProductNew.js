@@ -35,7 +35,7 @@ const ProductNew = () => {
                             </FormInput>
                             <FormInput>
                                 <Label>Description</Label>
-                                <Input type="text" placeholder="Description" />
+                                <Input type="text" placeholder="description..." />
                             </FormInput>
                             <FormInput>
                                 <Label>Category</Label>
