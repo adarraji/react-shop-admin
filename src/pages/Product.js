@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
@@ -6,6 +6,7 @@ import Chart from "../components/Chart";
 import PublishIcon from '@mui/icons-material/Publish';
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { userRequest } from "../requestMethods";
 
 const Product = () => {
 
@@ -31,7 +32,41 @@ const Product = () => {
         state.product.products.find(item => item._id === productId)
     )
 
-    console.log(product)
+    const [pStats, setPStats] = useState([]);
+
+    const MONTHS = useMemo(
+        () => [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+        ],
+        []
+    );
+
+    useEffect(() => {
+        const getStats = async () => {
+            try {
+                const res = await userRequest("orders/income?pid=" + productId);
+                console.log(res.data)
+                res.data.map((item) =>
+                    setPStats((prev) => [
+                        ...prev,
+                        { name: MONTHS[item._id - 1], Sales: item.total }
+                    ])
+                );
+            } catch (err) { console.log(err) }
+        }
+        getStats();
+    }, [MONTHS, productId]);
 
     return (
         <Container>
@@ -45,7 +80,7 @@ const Product = () => {
                     </ProductTitleContainer>
                     <ProductTop>
                         <ProductTopLeft>
-                            <Chart aspect={4 / 2} title="Sales Performance" data={productData} areaDataKey="Sales" />
+                            <Chart aspect={4 / 2} title="Sales Performance" data={pStats} areaDataKey="Sales" />
                         </ProductTopLeft>
                         <ProductTopRight>
                             <ProductInfoTop>
