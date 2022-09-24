@@ -11,6 +11,8 @@ const ProductNew = () => {
     const [inputs, setInputs] = useState({});
     const [cat, setCat] = useState([]);
 
+    console.log(inputs);
+
     const handleInputChange = (e) => {
         setInputs(prev => {
             return { ...prev, [e.target.name]: e.target.value }
@@ -55,7 +57,7 @@ const ProductNew = () => {
                             </FormInput>
                             <FormInput>
                                 <Label>Price</Label>
-                                <Input name="price" type="text" placeholder="100" onChange={handleInputChange} />
+                                <Input name="price" type="number" placeholder="100" onChange={handleInputChange} />
                             </FormInput>
                             <FormInput>
                                 <Label>Stock</Label>
