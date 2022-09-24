@@ -11,6 +11,16 @@ const ProductNew = () => {
     const [inputs, setInputs] = useState({});
     const [cat, setCat] = useState([]);
 
+    const handleInputChange = (e) => {
+        setInputs(prev => {
+            return { ...prev, [e.target.name]: e.target.value }
+        })
+    }
+
+    const handleCatChange = (e) => {
+        return;
+    }
+
     return (
         <Container>
             <Sidebar />
@@ -33,23 +43,23 @@ const ProductNew = () => {
                             </FormInput>
                             <FormInput>
                                 <Label>Title</Label>
-                                <Input type="text" placeholder="Apple Macbook Pro" />
+                                <Input name="title" type="text" placeholder="Apple Macbook Pro" onChange={handleInputChange} />
                             </FormInput>
                             <FormInput>
                                 <Label>Description</Label>
-                                <Input type="text" placeholder="description..." />
+                                <Input name="desc" type="text" placeholder="description..." onChange={handleInputChange} />
                             </FormInput>
                             <FormInput>
                                 <Label>Categories</Label>
-                                <Input type="text" placeholder="jeans,skirts" />
+                                <Input type="text" placeholder="jeans,skirts" onChange={handleCatChange} />
                             </FormInput>
                             <FormInput>
                                 <Label>Price</Label>
-                                <Input type="text" placeholder="100" />
+                                <Input name="price" type="text" placeholder="100" onChange={handleInputChange} />
                             </FormInput>
                             <FormInput>
                                 <Label>Stock</Label>
-                                <Select name="inStock">
+                                <Select name="inStock" onChange={handleInputChange}>
                                     <Option value="true">Yes</Option>
                                     <Option value="false">No</Option>
                                 </Select>
