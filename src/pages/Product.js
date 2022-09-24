@@ -10,21 +10,6 @@ import { userRequest } from "../requestMethods";
 
 const Product = () => {
 
-    const productData = [
-        {
-            name: "Jan",
-            "Sales": 4000,
-        },
-        {
-            name: "Feb",
-            "Sales": 3000,
-        },
-        {
-            name: "Mar",
-            "Sales": 5000,
-        },
-    ];
-
     const location = useLocation();
     const productId = location.pathname.split("/")[2];
 
