@@ -6,7 +6,10 @@ import {
     getProductFailure,
     deleteProductStart,
     deleteProductSuccess,
-    deleteProductFailure
+    deleteProductFailure,
+    updateProductStart,
+    updateProductSuccess,
+    updateProductFailure
 } from "./productRedux";
 
 export const login = async (dispatch, user) => {
