@@ -8,7 +8,9 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 
 const ProductNew = () => {
     const [file, setFile] = useState("");
-    console.log(file);
+    const [inputs, setInputs] = useState({});
+    const [cat, setCat] = useState([]);
+
     return (
         <Container>
             <Sidebar />
