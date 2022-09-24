@@ -20,7 +20,7 @@ const ProductNew = () => {
     }
 
     const handleCatChange = (e) => {
-        return;
+        setCat(e.target.value.split(","));
     }
 
     return (
