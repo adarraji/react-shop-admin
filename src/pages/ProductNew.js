@@ -38,8 +38,8 @@ const ProductNew = () => {
                                 <Input type="text" placeholder="description..." />
                             </FormInput>
                             <FormInput>
-                                <Label>Category</Label>
-                                <Input type="text" placeholder="Computers" />
+                                <Label>Categories</Label>
+                                <Input type="text" placeholder="jeans,skirts" />
                             </FormInput>
                             <FormInput>
                                 <Label>Price</Label>
