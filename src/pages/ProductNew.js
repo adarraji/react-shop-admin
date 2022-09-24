@@ -10,6 +10,8 @@ import {
     getDownloadURL,
 } from "firebase/storage";
 import app from "../firebase";
+import { addProduct } from "../redux/apiCalls";
+import { useDispatch } from "react-redux";
 
 
 
@@ -17,6 +19,7 @@ const ProductNew = () => {
     const [file, setFile] = useState("");
     const [inputs, setInputs] = useState({});
     const [cat, setCat] = useState([]);
+    const dispatch = useDispatch();
 
     const handleInputChange = (e) => {
         setInputs(prev => {
@@ -62,7 +65,8 @@ const ProductNew = () => {
                 // Handle successful uploads on complete
                 // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                    console.log({ ...inputs, img: downloadURL, categories: cat });
+                    const product = { ...inputs, img: downloadURL, categories: cat };
+                    addProduct(product, dispatch);
                 });
             }
         );
