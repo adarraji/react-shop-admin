@@ -20,8 +20,11 @@ To run the application
 * styled-components
 * Material-UI
 * React Router
+* React Hooks
+* React Redux / Redux toolkit
 * React Circular Progressbar
 * Recharts
+* FireBase
 
 
 ## Deployment

@@ -11,8 +11,6 @@ const ProductNew = () => {
     const [inputs, setInputs] = useState({});
     const [cat, setCat] = useState([]);
 
-    console.log(inputs);
-
     const handleInputChange = (e) => {
         setInputs(prev => {
             return { ...prev, [e.target.name]: e.target.value }
@@ -21,6 +19,11 @@ const ProductNew = () => {
 
     const handleCatChange = (e) => {
         setCat(e.target.value.split(","));
+    }
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        const fileName = new Date().getTime() + file.name;
     }
 
     return (
@@ -66,7 +69,7 @@ const ProductNew = () => {
                                     <Option value="false">No</Option>
                                 </Select>
                             </FormInput>
-                            <Button>Send</Button>
+                            <Button onClick={handleClick}>Send</Button>
                         </Form>
                     </Right>
                 </Bottom>
