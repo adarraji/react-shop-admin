@@ -44,3 +44,23 @@ export const deleteProduct = async (id, dispatch) => {
         dispatch(deleteProductFailure());
     }
 }
+
+export const updateProduct = async (id, product, dispatch) => {
+    dispatch(deleteProductStart());
+    try {
+        dispatch(updateProductSuccess({id, product}));
+    } catch (err) {
+        dispatch(updateProductFailure());
+    }
+}
+
+
+export const addProduct = async (product, dispatch) => {
+    dispatch(deleteProductStart());
+    try {
+        const res = await publicRequest.post("/products", product);
+        dispatch(addProductSuccess(res.data));
+    } catch (err) {
+        dispatch(addProductFailure());
+    }
+}
