@@ -47,7 +47,10 @@ const ProductNew = () => {
                             </FormInput>
                             <FormInput>
                                 <Label>Stock</Label>
-                                <Input type="text" placeholder="in stocks" />
+                                <Select name="inStock">
+                                    <Option value="true">Yes</Option>
+                                    <Option value="false">No</Option>
+                                </Select>
                             </FormInput>
                             <Button>Send</Button>
                         </Form>
@@ -147,7 +150,13 @@ const Icon = styled.div`
     cursor: pointer;
 `;
 
+const Select = styled.select`
+    margin: 10px 0px;
+`;
 
+const Option = styled.option`
+
+`;
 
 
 
