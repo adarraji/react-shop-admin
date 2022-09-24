@@ -80,7 +80,7 @@ const Product = () => {
                     </ProductTitleContainer>
                     <ProductTop>
                         <ProductTopLeft>
-                            <Chart aspect={4 / 2} title="Sales Performance" data={pStats} areaDataKey="Sales" />
+                            <Chart aspect={4 / 1} title="Sales Performance" data={pStats} areaDataKey="Sales" />
                         </ProductTopLeft>
                         <ProductTopRight>
                             <ProductInfoTop>
