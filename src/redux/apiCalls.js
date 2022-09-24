@@ -1,4 +1,4 @@
-import { publicRequest, userRequest } from "../requestMethods";
+import { publicRequest } from "../requestMethods";
 import { loginFailure, loginStart, loginSuccess } from "./userRedux";
 import {
     getProductStart,
@@ -48,7 +48,7 @@ export const deleteProduct = async (id, dispatch) => {
 export const updateProduct = async (id, product, dispatch) => {
     dispatch(deleteProductStart());
     try {
-        dispatch(updateProductSuccess({id, product}));
+        dispatch(updateProductSuccess({ id: id, product: product }));
     } catch (err) {
         dispatch(updateProductFailure());
     }
