@@ -25,6 +25,11 @@ To run the application
 * Recharts
 * FireBase
 
+## Environmental Variables
+
+### Firebse App Configuration File
+
+Create `src/firebase.js` file and add Firebase app configration in it
 
 
 ## Authors
