@@ -56,8 +56,10 @@ const Product = () => {
         const getStats = async () => {
             try {
                 const res = await userRequest("orders/income?pid=" + productId);
-                console.log(res.data)
-                res.data.map((item) =>
+                const list = res.data.sort((a, b) => {
+                    return a._id - b._id
+                })
+                list.map((item) =>
                     setPStats((prev) => [
                         ...prev,
                         { name: MONTHS[item._id - 1], Sales: item.total }
