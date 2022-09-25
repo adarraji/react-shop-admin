@@ -91,7 +91,7 @@ export const addProduct = async (product, dispatch) => {
 export const getUsers = async (dispatch) => {
     dispatch(getUserStart());
     try {
-        const res = await publicRequest.get("/users");
+        const res = await userRequest.get("/users");
         dispatch(getUserSuccess(res.data));
     } catch (err) {
         dispatch(getUserFailure());

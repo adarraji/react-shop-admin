@@ -2,21 +2,21 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
-import { deleteProduct, getProducts } from "../redux/apiCalls";
+import { deleteUser, getUsers } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
 
 const UserList = () => {
     const dispatch = useDispatch();
-    const products = useSelector(state => state.product.products);
+    const users = useSelector(state => state.client.clients);
 
     useEffect(() => {
-        getProducts(dispatch);
+        getUsers(dispatch);
     }, [dispatch]);
 
     const handleDelete = (id) => {
-        deleteProduct(id, dispatch);
+        deleteUser(id, dispatch);
     }
 
     const columns = [
@@ -28,7 +28,7 @@ const UserList = () => {
             renderCell: (params) => {
                 return (
                     <CellWithImage>
-                        <CellImage src={params.row.img} alt="avatar" />
+                        <CellImage src={params.row.img || "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"} alt="avatar" />
                         {params.row.username}
                     </CellWithImage>
                 );
@@ -72,7 +72,7 @@ const UserList = () => {
                         </Link>
                     </Title>
                     <DataGrid
-                        rows={products}
+                        rows={users}
                         columns={columns}
                         pageSize={5}
                         rowsPerPageOptions={[5]}

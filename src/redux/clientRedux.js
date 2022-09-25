@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const clientSlice = createSlice({
-    name: "user",
+    name: "client",
     initialState: {
-        users: [],
+        clients: [],
         isFetching: false,
         error: false,
     },
@@ -16,7 +16,7 @@ export const clientSlice = createSlice({
         },
         getUserSuccess: (state, action) => {
             state.isFetching = false;
-            state.users = action.payload;
+            state.clients = action.payload;
         },
         getUserFailure: (state) => {
             state.isFetching = false;
@@ -30,8 +30,8 @@ export const clientSlice = createSlice({
         },
         deleteUserSuccess: (state, action) => {
             state.isFetching = false;
-            state.users.splice(
-                state.users.findIndex(item => item._id === action.payload),
+            state.clients.splice(
+                state.clients.findIndex(item => item._id === action.payload),
                 1
             );
         },
@@ -47,7 +47,7 @@ export const clientSlice = createSlice({
         },
         updateUserSuccess: (state, action) => {
             state.isFetching = false;
-            state.users[state.users.findIndex(item => item._id === action.payload.id)] = action.payload.user;
+            state.clients[state.clients.findIndex(item => item._id === action.payload.id)] = action.payload.user;
         },
         updateUserFailure: (state) => {
             state.isFetching = false;
@@ -61,7 +61,7 @@ export const clientSlice = createSlice({
         },
         addUserSuccess: (state, action) => {
             state.isFetching = false;
-            state.users.push(action.payload);
+            state.clients.push(action.payload);
         },
         addUserFailure: (state) => {
             state.isFetching = false;
