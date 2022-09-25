@@ -46,17 +46,20 @@ const UserList = () => {
             width: 100,
         },
         {
-            field: "status",
-            headerName: "Status",
-            width: 160,
+            field: "action",
+            headerName: "Action",
+            width: 200,
             renderCell: (params) => {
                 return (
-                    <CellWithStatus status={params.row.status}>
-                        {params.row.status}
-                    </CellWithStatus>
-                );
-            },
-        },
+                    <CellAction>
+                        <Link to={"/users/" + params.row._id} style={{ textDecoration: "none" }}>
+                            <ViewButton>Edit</ViewButton>
+                        </Link>
+                        <DeleteButton onClick={() => handleDelete(params.row._id)}>Delete</DeleteButton>
+                    </CellAction>
+                )
+            }
+        }
     ];
 
     return (
