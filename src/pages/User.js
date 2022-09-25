@@ -75,7 +75,7 @@ const SinglePage = () => {
                                 <Label>Password</Label>
                                 <Input type="password" />
                                 <Label>Admin</Label>
-                                <Select name="inStock" id="idStock">
+                                <Select name="isAdmin" id="idadmin">
                                     <Option value="yes">Yes</Option>
                                     <Option value="no">No</Option>
                                 </Select>

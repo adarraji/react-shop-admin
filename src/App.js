@@ -10,6 +10,7 @@ import { userInputs } from "./formSource";
 import Product from './pages/Product';
 import ProductNew from './pages/ProductNew';
 import User from './pages/User';
+import UserNew from './pages/UserNew';
 
 function App() {
   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin
@@ -23,7 +24,7 @@ function App() {
             <Route path="users">
               <Route index element={<UserList />} />
               <Route path=":userId" element={<User />} />
-              <Route path="new" element={<NewPage inputs={userInputs} title="Add New User" />} />
+              <Route path="new" element={<UserNew />} />
             </Route>
             <Route path="products">
               <Route index element={<ProductList />} />
