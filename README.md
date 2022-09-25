@@ -31,6 +31,10 @@ To run the application
 
 Create `src/firebase.js` file and add Firebase app configration in it
 
+### Server URL
+
+Add server url in  `src/requestMethods.js`
+
 
 ## Authors
 

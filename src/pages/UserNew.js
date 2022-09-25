@@ -11,18 +11,22 @@ import {
 } from "firebase/storage";
 import { addUser } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
-import userRedux from "../redux/userRedux";
 
 
-const UserNew = () => {
+
+const ProductNew = () => {
     const [file, setFile] = useState("");
     const [inputs, setInputs] = useState({});
+
     const dispatch = useDispatch();
+
     const handleInputChange = (e) => {
         setInputs(prev => {
             return { ...prev, [e.target.name]: e.target.value }
         })
     }
+
+
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -67,8 +71,6 @@ const UserNew = () => {
         );
     }
 
-    console.log(inputs)
-
     return (
         <Container>
             <Sidebar />
@@ -95,7 +97,7 @@ const UserNew = () => {
                             </FormInput>
                             <FormInput>
                                 <Label>Email</Label>
-                                <Input name="email" type="email" placeholder="username" onChange={handleInputChange} />
+                                <Input name="email" type="email" placeholder="email" onChange={handleInputChange} />
                             </FormInput>
                             <FormInput>
                                 <Label>Password</Label>
@@ -216,4 +218,4 @@ const Option = styled.option`
 
 
 
-export default UserNew
+export default ProductNew
