@@ -24,4 +24,6 @@ yarn-error.log*
 
 src/firebase.js
 
+.env
+
 temp.js
