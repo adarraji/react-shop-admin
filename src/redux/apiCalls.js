@@ -12,8 +12,26 @@ import {
     updateProductFailure,
     addProductStart,
     addProductSuccess,
-    addProductFailure
+    addProductFailure,
 } from "./productRedux";
+
+import {
+    getUserStart,
+    getUserSuccess,
+    getUserFailure,
+    deleteUserStart,
+    deleteUserSuccess,
+    deleteUserFailure,
+    updateUserStart,
+    updateUserSuccess,
+    updateUserFailure,
+    addUserStart,
+    addUserSuccess,
+    addUserFailure
+} from "./clientRedux";
+
+
+// Auth
 
 export const login = async (dispatch, user) => {
     dispatch(loginStart());
@@ -25,8 +43,10 @@ export const login = async (dispatch, user) => {
     }
 }
 
+// PRODUCTS
+
 export const getProducts = async (dispatch) => {
-    dispatch(deleteProductStart());
+    dispatch(getProductStart());
     try {
         const res = await publicRequest.get("/products");
         dispatch(getProductSuccess(res.data));
@@ -36,7 +56,7 @@ export const getProducts = async (dispatch) => {
 }
 
 export const deleteProduct = async (id, dispatch) => {
-    dispatch(getProductStart());
+    dispatch(deleteProductStart());
     try {
         // const res = await userRequest.get(`/products/${id}`);
         dispatch(deleteProductSuccess(id));
@@ -62,5 +82,48 @@ export const addProduct = async (product, dispatch) => {
         dispatch(addProductSuccess(res.data));
     } catch (err) {
         dispatch(addProductFailure());
+    }
+}
+
+
+// USERS
+
+export const getUsers = async (dispatch) => {
+    dispatch(getUserStart());
+    try {
+        const res = await publicRequest.get("/users");
+        dispatch(getUserSuccess(res.data));
+    } catch (err) {
+        dispatch(getUserFailure());
+    }
+}
+
+export const deleteUser = async (id, dispatch) => {
+    dispatch(deleteUserStart());
+    try {
+        // const res = await userRequest.get(`/users/${id}`);
+        dispatch(deleteUserSuccess(id));
+    } catch (err) {
+        dispatch(deleteUserFailure());
+    }
+}
+
+export const updateUser = async (id, user, dispatch) => {
+    dispatch(updateUserStart());
+    try {
+        dispatch(updateUserSuccess({ id: id, user: user }));
+    } catch (err) {
+        dispatch(updateUserFailure());
+    }
+}
+
+
+export const addUser = async (user, dispatch) => {
+    dispatch(addUserStart());
+    try {
+        const res = await userRequest.post("/users", user);
+        dispatch(addUserSuccess(res.data));
+    } catch (err) {
+        dispatch(addUserFailure());
     }
 }

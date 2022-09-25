@@ -20,37 +20,43 @@ const UserList = () => {
     }
 
     const columns = [
-        { field: "_id", headerName: "ID", width: 220 },
+        { field: "id", headerName: "ID", width: 70 },
         {
-            field: "product",
-            headerName: "product",
-            width: 240,
+            field: "user",
+            headerName: "User",
+            width: 230,
             renderCell: (params) => {
                 return (
                     <CellWithImage>
-                        <CellImage src={params.row.img} alt="" />
-                        {params.row.title}
+                        <CellImage src={params.row.img} alt="avatar" />
+                        {params.row.username}
                     </CellWithImage>
                 );
             },
         },
-        { field: "inStock", headerName: "Stock", width: 200 },
-        { field: "price", headerName: "Price", width: 160, },
         {
-            field: "action",
-            headerName: "Action",
-            width: 200,
+            field: "email",
+            headerName: "Email",
+            width: 230,
+        },
+
+        {
+            field: "age",
+            headerName: "Age",
+            width: 100,
+        },
+        {
+            field: "status",
+            headerName: "Status",
+            width: 160,
             renderCell: (params) => {
                 return (
-                    <CellAction>
-                        <Link to={"/products/" + params.row._id} style={{ textDecoration: "none" }}>
-                            <ViewButton>Edit</ViewButton>
-                        </Link>
-                        <DeleteButton onClick={() => handleDelete(params.row._id)}>Delete</DeleteButton>
-                    </CellAction>
-                )
-            }
-        }
+                    <CellWithStatus status={params.row.status}>
+                        {params.row.status}
+                    </CellWithStatus>
+                );
+            },
+        },
     ];
 
     return (
@@ -93,6 +99,13 @@ const CellWithImage = styled.div`
     display: flex;
     align-items: center;
     
+`;
+
+const CellWithStatus = styled.div`
+    padding: 5px;
+    border-radius: 5pxs;
+    background-color: ${props => props.status === "active" ? "rgba(0, 128, 0, 0.05)" : (props.status === "pending" ? "rgba(255, 217, 0, 0.05)" : "rgba(255, 0, 0, 0.05)")};
+    color: ${props => props.status === "active" ? "green" : (props.status === "pending" ? "goldenrod" : "crimson")};
 `;
 
 const CellImage = styled.img`
