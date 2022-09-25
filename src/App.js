@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { userInputs } from "./formSource";
 import Product from './pages/Product';
 import ProductNew from './pages/ProductNew';
+import User from './pages/User';
 
 function App() {
   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin
@@ -21,7 +22,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="users">
               <Route index element={<UserList />} />
-              <Route path=":userId" element={<SinglePage />} />
+              <Route path=":userId" element={<User />} />
               <Route path="new" element={<NewPage inputs={userInputs} title="Add New User" />} />
             </Route>
             <Route path="products">
