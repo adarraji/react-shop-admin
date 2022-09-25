@@ -9,7 +9,6 @@ import {
     uploadBytesResumable,
     getDownloadURL,
 } from "firebase/storage";
-import app from "../firebase";
 import { addProduct } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
 
@@ -34,7 +33,7 @@ const ProductNew = () => {
     const handleClick = (e) => {
         e.preventDefault();
         const fileName = new Date().getTime() + file.name;
-        const storage = getStorage(app);
+        const storage = getStorage();
         const storageRef = ref(storage, fileName);
         const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -64,7 +63,9 @@ const ProductNew = () => {
             () => {
                 // Handle successful uploads on complete
                 // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    console.log(downloadURL);
                     const product = { ...inputs, img: downloadURL, categories: cat };
                     addProduct(product, dispatch);
                 });
