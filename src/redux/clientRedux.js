@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const clientSlice = createSlice({
-    name: "product",
+    name: "user",
     initialState: {
         users: [],
         isFetching: false,
