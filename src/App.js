@@ -18,7 +18,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        {!admin && (
+          <Route path="/">
+            <Route index element={<Login />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
+        )
+
+        }
         {admin && (
           <Route path="/">
             <Route index element={<Home />} />
@@ -32,6 +39,7 @@ function App() {
               <Route path=":productId" element={<Product />} />
               <Route path="new" element={<ProductNew />} />
             </Route>
+            <Route path="/login" element={<Login />} />
           </Route>
         )
         }
