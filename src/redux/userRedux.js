@@ -6,6 +6,7 @@ export const userSlice = createSlice({
         currentUser: null,
         isFetching: false,
         error: false,
+        isAdmin: false
     },
     reducers: {
         loginStart: (state) => {
@@ -14,6 +15,7 @@ export const userSlice = createSlice({
         loginSuccess: (state, action) => {
             state.isFetching = false;
             state.currentUser = action.payload;
+            state.isAdmin = action.payload.isAdmin;
         },
         loginFailure: (state) => {
             state.isFetching = false;
