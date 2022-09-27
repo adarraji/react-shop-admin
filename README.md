@@ -29,17 +29,6 @@ To run the application
 * Recharts
 * FireBase
 
-## Deployment
-Deployed on Heroku
-
-You can see the website [here](https://react-shop-admin2.herokuapp.com/)
-
-
-## Authors
-
-- **Ali Darraji** - [https://github.com/adarraji](https://github.com/adarraji)
-
-
 
 ## Environmental Variables
 
@@ -50,6 +39,12 @@ Create `src/firebase.js` file and add Firebase app configration in it
 ### Server URL
 
 Add server url in  `src/requestMethods.js`
+
+
+## Deployment
+Deployed on Heroku
+
+You can see the website [here](https://react-shop-admin2.herokuapp.com/)
 
 
 ## Authors
