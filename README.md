@@ -63,3 +63,72 @@ Home Page
 
 <br />
 
+Products Page
+
+<br />
+
+![Image 3](./images/products.png)
+
+<br />
+<br />
+
+<br />
+
+Product Page
+
+<br />
+
+![Image 4](./images/product.png)
+
+<br />
+<br />
+
+<br />
+
+New Product Page
+
+<br />
+
+![Image 5](./images/image-03.png)
+
+<br />
+<br />
+
+<br />
+
+Users Page
+
+<br />
+
+![Image 6](./images/users.png)
+
+<br />
+<br />
+
+<br />
+
+User Page
+
+<br />
+
+![Image 7](./images/user.png)
+
+<br />
+<br />
+
+<br />
+
+New User Page
+
+<br />
+
+![Image 8](./images/usernew.png)
+
+<br />
+<br />
+
+<br />
+
+
+
+
