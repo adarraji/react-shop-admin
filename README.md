@@ -26,7 +26,6 @@ To run the application
 * React Router
 * React Hooks
 * React Redux / Redux toolkit
-* React Circular Progressbar
 * Recharts
 * FireBase
 
