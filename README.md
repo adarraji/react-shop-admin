@@ -89,7 +89,7 @@ New Product Page
 
 <br />
 
-![Image 5](./images/image-03.png)
+![Image 5](./images/productnew.png)
 
 <br />
 <br />
