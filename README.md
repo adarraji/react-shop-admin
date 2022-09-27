@@ -56,7 +56,7 @@ Home Page
 ![Image 1](./images/image-01.png)
 <br />
 
-![Image 2](./images/image-02.png)
+![Image 2](./images/image-022.png)
 
 <br />
 <br />
