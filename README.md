@@ -53,7 +53,7 @@ Home Page
 
 <br />
 
-![Image 1](./images/image-01.png)
+![Image 1](./images/image-011.png)
 <br />
 
 ![Image 2](./images/image-022.png)
