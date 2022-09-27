@@ -6,7 +6,7 @@ You can see the website [here](https://react-shop-admin2.herokuapp.com/)
 
 This one part of the full solution.  The backend API is build with Node.js, Express.js and MongoDB You can see it here [here](https://github.com/adarraji/node-shop-api)
 
-Also you can find the React eCommerce Web application [here](https://react-shop3.netlify.app/)
+Also you can find the React eCommerce Web application [here](https://github.com/adarraji/react-shop)
 
 To run the application
 
