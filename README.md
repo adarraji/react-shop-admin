@@ -2,7 +2,7 @@
 
 React Admin Dashboard. Home page has different widgets, progress bar, interactive chart and a table. The app has different pages with data tables for users, products, signle user and signle product. You can select, view, delete, sort and filter items in theses tables. You can view a signle item in table by clicking on view button.
 
-You can see the website [here](https://react-shop-admin2.herokuapp.com/)
+You can see the website [here](https://react-shop-admin.netlify.app//)
 
 This is one of three parts of full stack eCommerce app. You can find the Node.js/MongoDB REST API backend [here](https://github.com/adarraji/node-shop-api) and the React eCommerce Web application [here](https://github.com/adarraji/react-shop)
 
@@ -42,7 +42,7 @@ Add server url in  `src/requestMethods.js`
 ## Deployment
 Deployed on Heroku
 
-You can see the website [here](https://react-shop-admin2.herokuapp.com/)
+You can see the website [here](https://react-shop-admin.netlify.app//)
 
 
 ## Authors
