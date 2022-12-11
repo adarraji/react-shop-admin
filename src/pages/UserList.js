@@ -104,13 +104,6 @@ const CellWithImage = styled.div`
     
 `;
 
-const CellWithStatus = styled.div`
-    padding: 5px;
-    border-radius: 5pxs;
-    background-color: ${props => props.status === "active" ? "rgba(0, 128, 0, 0.05)" : (props.status === "pending" ? "rgba(255, 217, 0, 0.05)" : "rgba(255, 0, 0, 0.05)")};
-    color: ${props => props.status === "active" ? "green" : (props.status === "pending" ? "goldenrod" : "crimson")};
-`;
-
 const CellImage = styled.img`
     width: 32px;
     height: 32px;
