@@ -50,6 +50,11 @@ You can see the website [here](https://react-shop-admin.netlify.app//)
 - **Ali Darraji** - [https://github.com/adarraji](https://github.com/adarraji)
 
 
+## Deploy status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a534cabc-a471-4edd-8af6-70130f701893/deploy-status)](https://app.netlify.com/sites/react-shop-admin/deploys)
+
+
 ## Screenshots
 <br />
 
