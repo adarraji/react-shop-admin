@@ -40,7 +40,8 @@ Add server url in  `src/requestMethods.js`
 
 
 ## Deployment
-Deployed on Heroku
+
+Deployed on [Netlify](https://netlify.com)
 
 You can see the website [here](https://react-shop-admin.netlify.app//)
 
